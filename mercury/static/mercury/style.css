@@ -275,6 +275,9 @@ input#id_can_msg{
     border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
 }
 
+.error {
+    color: var(--red)
+}
 /* Base Bootstrap Style Elements */
 
 :root {
