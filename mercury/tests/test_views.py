@@ -16,6 +16,9 @@ BADCODE = "fakefake"
 CREATED_AT = "2019-12-10 23:25"
 EXPECTED_CREATED_AT = datetime.datetime.strptime(CREATED_AT, "%Y-%m-%d %H:%M")
 
+TESTCODE = "testcode"
+BADCODE = "fakefake"
+
 
 class TestViewsWithActiveEvent(TestCase):
     def setUp(self):
