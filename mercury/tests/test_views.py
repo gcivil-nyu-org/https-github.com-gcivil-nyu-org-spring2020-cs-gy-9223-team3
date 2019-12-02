@@ -113,6 +113,7 @@ class TestViewsWithoutActiveEvent(TestCase):
         self.simulator_url = "mercury:simulator"
         self.can_url = "mercury:can-ui"
         self.stopwatch_url = "mercury:stopwatch"
+        self.client.get(reverse(self.login_url))
 
         # Calling GET against login_url is necessary to check for an event
         self.client.get(reverse(self.login_url))
