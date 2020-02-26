@@ -1,20 +1,20 @@
 `develop`
 
-[![Build Status](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-class.svg?branch=develop&service=github)](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-class)
-[![Coverage Status](https://coveralls.io/repos/github/gcivil-nyu-org/spring2020-cs-gy-9223-class/badge.svg?branch=master)](https://coveralls.io/github/gcivil-nyu-org/spring2020-cs-gy-9223-class?branch=develop&service=github)
+[![Build Status](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-backend.svg?branch=develop)](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-backend)
+[![Coverage Status](https://coveralls.io/repos/github/gcivil-nyu-org/spring2020-cs-gy-9223-backend/badge.svg?branch=develop)](https://coveralls.io/github/gcivil-nyu-org/spring2020-cs-gy-9223-backend?branch=develop)
 
 `master`
 
-[![Build Status](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-class.svg?branch=master&service=github)](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-class)
-[![Coverage Status](https://coveralls.io/repos/github/gcivil-nyu-org/spring2020-cs-gy-9223-class/badge.svg?branch=master)](https://coveralls.io/github/gcivil-nyu-org/spring2020-cs-gy-9223-class?branch=master&service=github)
+[![Build Status](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-backend.svg?branch=master)](https://travis-ci.com/gcivil-nyu-org/spring2020-cs-gy-9223-backend)
+[![Coverage Status](https://coveralls.io/repos/github/gcivil-nyu-org/spring2020-cs-gy-9223-backend/badge.svg?branch=master)](https://coveralls.io/github/gcivil-nyu-org/spring2020-cs-gy-9223-backend?branch=master)
 
 # Team Project repo
 
-Heroku Production (master) URI: [https://nyu-mercury-prod.herokuapp.com/](https://nyu-mercury-prod.herokuapp.com/)
+Heroku Production (master) URI: [https://mecury-backend-prod.herokuapp.com/](https://mecury-backend-prod.herokuapp.com/)
 
-Heroku Staging (develop) URI: [https://nyu-mercury.herokuapp.com](https://nyu-mercury.herokuapp.com)
+Heroku Staging (develop) URI: [https://mecury-backend.herokuapp.com/](https://mecury-backend.herokuapp.com/)
 
-Heroku Dashboard: [https://dashboard.heroku.com/pipelines/35c0558f-127e-482b-8cdf-3f4d24464872](https://dashboard.heroku.com/pipelines/35c0558f-127e-482b-8cdf-3f4d24464872)
+Heroku Dashboard: [https://dashboard.heroku.com/pipelines/0ecdbb08-017b-4ea2-8969-d6b7dadb9888](https://dashboard.heroku.com/pipelines/0ecdbb08-017b-4ea2-8969-d6b7dadb9888)
 
 
 # First time repo setup
