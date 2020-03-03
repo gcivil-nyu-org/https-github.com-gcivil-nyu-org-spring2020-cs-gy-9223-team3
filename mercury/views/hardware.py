@@ -9,10 +9,11 @@ log = logging.getLogger(__name__)
 
 
 class HardwareView(TemplateView):
-
     def get(self, request, *args, **kwargs):
         """The get request sent from web to determine the parameters of the serial port
-            Url Sample: https://localhost:8000/hardware?enable=1&port=COM1&baudrate=8000&bytesize=8&parity=N&stopbits=1&timeout=None
+            Url Sample:
+            https://localhost:8000/hardware?enable=1&baudrate=8000&bytesize=8
+                &parity=N&stopbits=1&timeout=None
             enable: must define, set the port on if 1, off if 0
             port: must define, port number
             baudrate: Optional, default 9600
@@ -27,7 +28,7 @@ class HardwareView(TemplateView):
 
         ser = serial.Serial()
         if enable:
-            ports = glob.glob('/dev/tty.*')
+            ports = glob.glob("/dev/tty.*")
             ser.port = ports[0]
             if request.GET.get("baudrate"):
                 ser.baudrate = request.GET.get("baudrate")
