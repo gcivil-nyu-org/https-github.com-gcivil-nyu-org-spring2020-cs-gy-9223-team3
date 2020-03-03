@@ -138,7 +138,7 @@ class Field(models.Model):
         return Field.__name__
 
 
-class General_data(models.Model):
+class GeneralData(models.Model):
     event_id = models.OneToOneField(
         Events, related_name="event_data", on_delete=models.CASCADE, to_field="event_id"
     )
@@ -158,4 +158,4 @@ class General_data(models.Model):
         unique_together = (("event_id", "sensor_id", "field_id"),)
 
     def __str__(self):
-        return General_data.__name__
+        return GeneralData.__name__

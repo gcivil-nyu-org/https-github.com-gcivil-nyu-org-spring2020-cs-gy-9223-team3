@@ -6,3 +6,5 @@ django-crispy-forms==1.8.*
 python-dotenv==0.10.*
 whitenoise==4.1.4
 pySerial
+aioserial
+pySerial-asyncio

@@ -10,6 +10,10 @@ from .models import (
     SuspensionSensor,
     FuelLevelSensor,
     EventCodeAccess,
+    Events,
+    Field,
+    Sensor,
+    GeneralData,
 )
 
 admin.site.register(TemperatureSensor)
@@ -18,3 +22,7 @@ admin.site.register(WheelSpeedSensor)
 admin.site.register(SuspensionSensor)
 admin.site.register(FuelLevelSensor)
 admin.site.register(EventCodeAccess)
+admin.site.register(Events)
+admin.site.register(Field)
+admin.site.register(Sensor)
+admin.site.register(GeneralData)

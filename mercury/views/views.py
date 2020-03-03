@@ -54,6 +54,7 @@ class EventAccess(TemplateView):
         )
         if event_code_objects:
             request.session["event_code_known"] = True
+            request.session["event code"] = event_code
             return HttpResponseRedirect("index")
         else:
             request.session["event_code_known"] = False
