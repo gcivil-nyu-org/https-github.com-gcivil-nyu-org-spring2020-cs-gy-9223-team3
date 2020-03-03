@@ -6,12 +6,9 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mercury', '0007_events_field_general_data_sensor'),
+        ("mercury", "0007_events_field_general_data_sensor"),
     ]
 
     operations = [
-        migrations.RenameModel(
-            old_name='General_data',
-            new_name='GeneralData',
-        ),
+        migrations.RenameModel(old_name="General_data", new_name="GeneralData",),
     ]

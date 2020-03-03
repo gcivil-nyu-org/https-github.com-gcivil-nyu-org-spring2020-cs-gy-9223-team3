@@ -5,11 +5,13 @@ import asyncio
 import serial_asyncio
 
 from django.utils import dateparse
-from django.views.generic import TemplateView
-from django.http import HttpResponse
 
 from mercury.event_check import require_event_code
 from mercury.models import GeneralData, Events, Field, Sensor
+
+from django.views.generic import TemplateView
+from django.http import HttpResponse
+
 
 log = logging.getLogger(__name__)
 
@@ -21,7 +23,6 @@ class HardwareView(TemplateView):
             Url Sample:
             https://localhost:8000/hardware?enable=1&baudrate=8000&bytesize=8
                 &parity=N&stopbits=1&timeout=None
-
                 enable: must define, set the port on if 1, off if 0
                 baudrate: Optional, default 9600
                 bytesize: Optional, default 8 bits
@@ -37,6 +38,7 @@ class HardwareView(TemplateView):
         ports = glob.glob("/dev/tty.*")
         ser.port = ports[0]
         if enable == "1":
+
             if request.GET.get("baudrate"):
                 ser.baudrate = request.GET.get("baudrate")
             if request.GET.get("bytesize"):
@@ -50,10 +52,11 @@ class HardwareView(TemplateView):
             ser.open()
 
             loop = asyncio.new_event_loop()
-            coro = serial_asyncio.create_serial_connection(loop, AsyncSerialProtocol, ports[0])
+            coro = serial_asyncio.create_serial_connection(
+                loop, AsyncSerialProtocol, ports[0]
+            )
             try:
                 loop.run_until_complete(coro)
-                loop.run_forever()
             finally:
                 loop.close()
         else:
@@ -84,7 +87,7 @@ class HardwareView(TemplateView):
         ss_value = sensors["ss_value"]
         date = dateparse.parse_datetime(sensors["date"])
 
-        for i, f in enumerate( ss_value):
+        for i, f in enumerate(ss_value):
             field_id = int(f)
             data_value = float(ss_value[f])
             event = Events.objects.get(event_id=event_id)
@@ -106,17 +109,17 @@ class HardwareView(TemplateView):
 class AsyncSerialProtocol(asyncio.Protocol):
     def connection_made(self, transport):
         self.transport = transport
-        print('port opened', transport)
+        print("port opened", transport)
         transport.serial.rts = False
-        transport.write(b'hello world\n')
+        transport.write(b"hello world\n")
 
     def data_received(self, data):
-        print('data received', repr(data))
+        print("data received", repr(data))
         models = HardwareView.json_to_models(repr(data))
         for m in models:
             m.save()
         self.transport.close()
 
     def connection_lost(self, exc):
-        print('port closed')
+        print("port closed")
         asyncio.get_event_loop().stop()
