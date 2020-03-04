@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "mercury.apps.MercuryConfig",
     "schema_demo",
     "api",
+    "api.apps.ApiConfig",
     "rest_framework",
     "drf_yasg",
 ]
