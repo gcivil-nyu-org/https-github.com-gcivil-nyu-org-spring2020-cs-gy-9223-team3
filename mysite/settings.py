@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "mercury.apps.MercuryConfig",
     "api",
     "rest_framework",
+    "drf_yasg",
 ]
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_SAVE_EVERY_REQUEST = True
