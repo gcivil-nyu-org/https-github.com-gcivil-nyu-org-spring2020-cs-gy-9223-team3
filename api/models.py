@@ -5,8 +5,8 @@ from django.utils import timezone
 
 class AGEvent(models.Model):
     """This model stores the information about events. When a new event is created,
-    an auto-incremented event_id will be assigned to this event and also store the current
-    date and location for this event. """
+    an UUID4-typed event_uuid will be assigned to this event and also store the current
+    date for this event. """
 
     event_uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     event_name = models.CharField(max_length=40, blank=True)
