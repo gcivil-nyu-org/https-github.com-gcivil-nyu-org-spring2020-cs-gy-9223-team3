@@ -7,7 +7,7 @@ from rest_framework import generics
 class EventList(generics.ListCreateAPIView):
     """
     List all events, or create a new event.
-    
+
     get:
     Return a list of all the existing events.
 

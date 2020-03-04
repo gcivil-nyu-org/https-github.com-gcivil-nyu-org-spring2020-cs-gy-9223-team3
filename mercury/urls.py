@@ -14,7 +14,7 @@ schema_view = get_schema_view(
             allowing onboard computer and pit crew to log and monitor system performance.",
         terms_of_service="tbd",
         contact=openapi.Contact(email="mercury@example.com"),
-        license=openapi.License(name="tbd"),  
+        license=openapi.License(name="tbd"),
     ),
     public=True,
     permission_classes=(permissions.AllowAny,),
@@ -30,7 +30,17 @@ urlpatterns = [
     path("api/can/", can.post, name="can-api"),  # CAN API Ingestion endpoint
     path("can/", can.CANUI.as_view(), name="can-ui"),  # CAN Decoder UI endpoint
     path("api/v1/", include("api.urls"), name="api"),
-    # re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    # re_path(
+    #     r"^swagger(?P<format>\.json|\.yaml)$",
+    #     schema_view.without_ui(cache_timeout=0),
+    #     name="schema-json",
+    # ),
+    re_path(
+        r"^swagger/$",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
+    re_path(
+        r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
+    ),
 ]
