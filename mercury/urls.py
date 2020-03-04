@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from .views import simulator, views, dashboard, can, stopwatch, hardware
 
 app_name = "mercury"
@@ -12,4 +12,5 @@ urlpatterns = [
     path("api/can/", can.post, name="can-api"),  # CAN API Ingestion endpoint
     path("can/", can.CANUI.as_view(), name="can-ui"),  # CAN Decoder UI endpoint
     path("hardware", hardware.HardwareView.as_view(), name="hardware"),  # Hardware API
+    path("api/v1/", include("api.urls"), name="api"),
 ]

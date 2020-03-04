@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     "mercury.apps.MercuryConfig",
     "schema_demo",
+    "api",
+    "rest_framework",
 ]
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_SAVE_EVERY_REQUEST = True
