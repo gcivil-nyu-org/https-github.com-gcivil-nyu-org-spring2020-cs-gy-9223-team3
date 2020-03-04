@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     "mercury.apps.MercuryConfig",
     "schema_demo",
-    "api",
     "api.apps.ApiConfig",
     "rest_framework",
     "drf_yasg",
