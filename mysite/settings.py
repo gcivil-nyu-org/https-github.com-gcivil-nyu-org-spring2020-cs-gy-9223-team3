@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "crispy_forms",
     "mercury.apps.MercuryConfig",
+    "schema_demo",
+    "api",
     "api.apps.ApiConfig",
     "rest_framework",
     "drf_yasg",
@@ -93,6 +95,16 @@ WSGI_APPLICATION = "mysite.wsgi.application"
 
 DATABASES = {}
 DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "mercury",
+        "USER": "postgres",
+        "PASSWORD": "123",
+        "HOST": "localhost",
+        "PORT": "5432",
+    }
+}
 if "TRAVIS" in os.environ:  # pragma: no cover
     DEBUG = True
     DATABASES = {
@@ -105,6 +117,7 @@ if "TRAVIS" in os.environ:  # pragma: no cover
             "PORT": "5432",
         }
     }
+
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)  # pragma: no cover

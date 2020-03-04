@@ -1,5 +1,5 @@
 from django.urls import path, include, re_path
-from .views import simulator, views, dashboard, can, stopwatch
+from .views import simulator, views, dashboard, can, stopwatch, hardware
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -29,6 +29,7 @@ urlpatterns = [
     path("stopwatch/", stopwatch.StopwatchView.as_view(), name="stopwatch"),
     path("api/can/", can.post, name="can-api"),  # CAN API Ingestion endpoint
     path("can/", can.CANUI.as_view(), name="can-ui"),  # CAN Decoder UI endpoint
+    path("hardware", hardware.HardwareView.as_view(), name="hardware"),  # Hardware API
     path("api/v1/", include("api.urls"), name="api"),
     # re_path(
     #     r"^swagger(?P<format>\.json|\.yaml)$",
