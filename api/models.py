@@ -12,6 +12,3 @@ class AGEvent(models.Model):
     event_name = models.CharField(max_length=40, blank=True)
     event_date = models.DateTimeField(default=timezone.now)
     event_description = models.CharField(max_length=100, null=True, blank=True)
-
-    def __str__(self):
-        return AGEvent.__name__
