@@ -20,7 +20,7 @@ script:
 - black --check --exclude "migrations/" mysite mercury api
 - flake8 --exclude test_can.py mysite/ mercury/ api/
 - flake8 --ignore=E501 test_can.py
-- coverage run --source=mysite,mercury --omit="mercury/migrations/*" manage.py test
+- coverage run --source=mysite,mercury,api --omit="migrations/*" manage.py test
 
 after_script:
 - coveralls
