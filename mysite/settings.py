@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "schema_demo",
     "api",
     "rest_framework",
+    "drf_yasg",
 ]
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 SESSION_SAVE_EVERY_REQUEST = True

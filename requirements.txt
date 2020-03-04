@@ -9,3 +9,4 @@ pySerial
 djangorestframework
 markdown
 django-filter
+drf-yasg
